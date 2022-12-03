@@ -154,6 +154,7 @@ class yamahaQLCL:
       page = self.page_names.index("DCA%d Color"%dca)
       try:
           key = dca_colors.index(color)
+          self.press_button(page, key+1)
       except:
           key = dca_colors.index('Yellow')
           print('bad color %s'%color)

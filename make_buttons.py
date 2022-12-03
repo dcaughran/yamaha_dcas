@@ -172,10 +172,14 @@ for ipage, page in enumerate(page_names):
             else:
                 continue
         elif "DCA" in page and "Color" in page:
+            dca_num = int(page[3])
             if button <= 9:
                 button_name = dca_colors[ibutton]
-                action = ''
-                options = {}
+                action = "otherYamParamMsg"
+                options = {"yamMIDIcmd": "0101030001",
+                          "yamMIDIch": dca_num - 1,
+                          "yamMIDIval": button - 1
+                        }
             else:
                 continue
         else:
